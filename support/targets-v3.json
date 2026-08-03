@@ -133,6 +133,21 @@
         "url": "https://raw.githubusercontent.com/MakeDecisionWorth/Root-My-Galaxy-Payloads/main/kernelsu/ksud-xperia1vi-69.2.A.4.90",
         "size": 4881960
       }
+    },
+    {
+      "payloadId": "xperia1vi-jp-69.2.A.4.24",
+      "displayName": "Xperia 1 VI (JP) | Kernel 6.1.138",
+      "models": ["XQ-EC44"],
+      "kernelVersions": ["6.1.138"],
+      "requiresFreshP0Session": true,
+      "exploit": {
+        "url": "https://raw.githubusercontent.com/MakeDecisionWorth/Root-My-Galaxy-Payloads/main/artifacts/xperia1vi-jp-69.2.A.4.24/cve-2026-43499-app.so",
+        "size": 104128
+      },
+      "kernelsu": {
+        "url": "https://raw.githubusercontent.com/MakeDecisionWorth/Root-My-Galaxy-Payloads/main/kernelsu/ksud-xperia1vi-jp-69.2.A.4.24",
+        "size": 4889224
+      }
     }
   ]
 }
