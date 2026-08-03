@@ -127,7 +127,7 @@
       "requiresFreshP0Session": true,
       "exploit": {
         "url": "https://raw.githubusercontent.com/MakeDecisionWorth/Root-My-Galaxy-Payloads/main/artifacts/xperia1vi-69.2.A.4.90/cve-2026-43499-app.so",
-        "size": 104128
+        "size": 139224
       },
       "kernelsu": {
         "url": "https://raw.githubusercontent.com/MakeDecisionWorth/Root-My-Galaxy-Payloads/main/kernelsu/ksud-xperia1vi-69.2.A.4.90",
@@ -142,7 +142,7 @@
       "requiresFreshP0Session": true,
       "exploit": {
         "url": "https://raw.githubusercontent.com/MakeDecisionWorth/Root-My-Galaxy-Payloads/main/artifacts/xperia1vi-jp-69.2.A.4.24/cve-2026-43499-app.so",
-        "size": 104128
+        "size": 139224
       },
       "kernelsu": {
         "url": "https://raw.githubusercontent.com/MakeDecisionWorth/Root-My-Galaxy-Payloads/main/kernelsu/ksud-xperia1vi-jp-69.2.A.4.24",
