@@ -1,20 +1,16 @@
 Set-Location $PSScriptRoot
 
-$clang = "C:\Users\Administrator\AppData\Local\Android\Sdk\ndk\28.2.13676358\toolchains\llvm\prebuilt\windows-x86_64\bin\clang.exe"
+$ndk = "C:\Users\Administrator\AppData\Local\Android\Sdk\ndk\28.2.13676358"
+$make = "$ndk\prebuilt\windows-x86_64\bin\make.exe"
+$clang = "$ndk\toolchains\llvm\prebuilt\windows-x86_64\bin\aarch64-linux-android35-clang.cmd"
 
-# New-Item -ItemType Directory -Force -Path "build\shennong\bin" | Out-Null
+# Makefile 中硬编码了 linux-x86_64，在 Windows 上改为 windows-x86_64
+$target = "xperia1vi-jp-69.2.A.4.24"
 
-# $srcs = "src/main.c src/util.c src/slide.c src/fops.c src/pipe.c src/root.c src/preload.c src/ksud_blob.S"
-# $args = "--target=aarch64-linux-android35 -fPIC -O2 -g0 -Wall -Wextra -Isrc -Wno-unused-parameter -Wno-sign-compare -Wno-unused-function -DTARGET_CONFIG_H=\`"targets/shennong/target.h\`" $srcs -shared -o build\shennong\bin\preload.so -pthread -llog"
+& $make TARGET=$target TARGET_CC="$clang" ANDROID_NDK_HOME="$ndk"
 
-# cmd /d /c "`"$clang`" $args"
-
-# if ($LASTEXITCODE -ne 0) {
-  # Write-Host "BUILD FAILED" -ForegroundColor Red
-  # exit 1
-# }
-
-# Get-FileHash build/shennong/bin/preload.so -Algorithm SHA256 | Format-List
-# Write-Host "BUILD OK: build\shennong\bin\preload.so" -ForegroundColor Green
-
-"G:\Users\chenx\AppData\Local\Android\Sdk\ndk\android-ndk-r25c\prebuilt\windows-x86_64\bin\make.exe" TARGET=pa3q-S938NKSUACZF1 ANDROID_NDK_HOME="C:\Users\Administrator\AppData\Local\Android\Sdk\ndk\28.2.13676358"
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "BUILD FAILED" -ForegroundColor Red
+    exit 1
+}
+Write-Host "BUILD OK: $target" -ForegroundColor Green
